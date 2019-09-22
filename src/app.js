@@ -1,10 +1,11 @@
 const express = require('express');
 const path = require('path');
 const hbs = require('hbs');
-
 const getForcast = require("./utils/weatherAPI.js");
 
+//creating a server
 const server = express();
+const port = process.env.PORT || 3000;
 
 
 
@@ -87,6 +88,6 @@ server.get("*",(req,res)=>{
 
 
 //Set Port
-server.listen(3000, ()=>{
-    console.log('Server is up on port 3000')
+server.listen(port, ()=>{
+    console.log('Server is up and listening on port ' + port)
 });
